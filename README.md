@@ -10,20 +10,10 @@ yarn install
 yarn run serve
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+### How to use it
 
-### Run your tests
+- We receive an array of photos
+- Example how to use it 
 ```
-yarn run test
+<slider photos=[{text:'string', src="string"}] :showNumber="true">
 ```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
