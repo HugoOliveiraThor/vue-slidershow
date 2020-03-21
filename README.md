@@ -15,5 +15,5 @@ yarn run serve
 - We receive an array of photos
 - Example how to use it 
 ```
-<slider photos=[{text:'string', src="string"}] :showNumber="true">
+<slider :photos=[{text:'string', src="string"}] :showNumber="true">
 ```

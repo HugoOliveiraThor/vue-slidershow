@@ -46,11 +46,19 @@ export default {
       default:() => [
         {
          text:1,
-         src:"https://i.ibb.co/JzVwm71/Add-Text-11-01-05-10-39.jpg" 
+         src:"https://homepages.cae.wisc.edu/~ece533/images/airplane.png" 
         },
         {
-         text:1,
+         text:2,
          src:"https://i.ibb.co/JzVwm71/Add-Text-11-01-05-10-39.jpg"
+        },
+        {
+         text:3,
+         src:"https://homepages.cae.wisc.edu/~ece533/images/arctichare.png"
+        },
+        {
+         text:4,
+         src:"https://homepages.cae.wisc.edu/~ece533/images/cat.png"
         }
       ]
     }

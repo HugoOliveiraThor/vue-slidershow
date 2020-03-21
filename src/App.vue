@@ -6,12 +6,11 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Slider from './components/slider.vue'
 
 export default {
   name: 'App',
   components: {
-    'Slider': () => import('./components/slider.vue')
+    'slider': () => import('./components/slider.vue')
   }
 }
 </script>
