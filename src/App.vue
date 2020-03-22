@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'App',
+  name: 'slidershow',
   components: {
     'slider': () => import('./components/slider.vue')
   }
