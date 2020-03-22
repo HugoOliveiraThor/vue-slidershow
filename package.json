@@ -1,6 +1,6 @@
 {
   "name": "@hugooliveira/vue-slidershow",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "main": "./dist/vue-slidershow.common.js",
   "private": false,
   "scripts": {
