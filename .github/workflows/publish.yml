@@ -1,32 +1,14 @@
-name: Set up Node.js for NPM
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+- name: Set up Node.js for NPM
   if: steps.check.outputs.changed == 'true'
   uses: actions/setup-node@v1.2.0
   with:
     registry-url: 'https://registry.npmjs.org' # This is just the default registry URL
 
-name: Install dependencies
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+- name: Install dependencies
   if: steps.check.outputs.changed == 'true'
-  run: npm build-lib
+  run: npm install
 
-name: Publish the package to NPM
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+- name: Publish the package to NPM
   if: steps.check.outputs.changed == 'true'
   run: npm publish
   env:
