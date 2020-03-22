@@ -1,32 +1,29 @@
+# NPM Publish is the name for this action
 name: NPM Publish
 
+# This action will trigger on every release get created
 on:
   release:
-    types: [published]
+    types: [created]
 
+# Job will run on a ubuntu instance
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node 12
-      uses: actions/setup-node@v1
-      with:
-        # specify node version and the registry for the RELEASE build
-        node-version: 12
-        registry-url: https://registry.npmjs.org/
-    - name: Build package
-      run: |
-        npm install -g yarn
-        npm install
-        yarn rollup -c
-    - name: Register Token
-      run: |
-        echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > /home/runner/work/_temp/.npmrc
-        echo "_auth=$NODE_AUTH_TOKEN" >>  /home/runner/work/_temp/.npmrc
-        echo "email=<your@email.address>" >>  /home/runner/work/_temp/.npmrc
-        echo "always-auth=true" >>  /home/runner/work/_temp/.npmrc
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
-    - name: Publish
-      run: npm publish
+      # Checkout the code
+      - uses: actions/checkout@v2
+      # Setup node with version 12.x and NPM registry url
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
+      # Run yarn install to install project packages
+      - run: yarn install
+      # yarn build to build the project
+      - run: yarn build
+      # publish the files to NPM
+      - run: npm publish --access public
+      # for publishing, npm need authorization. We add the NPM token to the environment which will take care of authorization to publish to the package
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
