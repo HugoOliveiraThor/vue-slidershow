@@ -18,7 +18,7 @@ jobs:
     - name: Build package
       run: |
         npm install -g yarn
-        yarn install
+        npm install
         yarn rollup -c
     - name: Register Token
       run: |
