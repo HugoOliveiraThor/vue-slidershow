@@ -1,6 +1,6 @@
 {
   "name": "@hugooliveira/vue-slidershow",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./dist/vue-slidershow.common.js",
   "private": false,
   "scripts": {
@@ -50,7 +50,9 @@
     "*.json",
     "*.js"
   ],
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/HugoOliveiraThor/vue-slidershow"
